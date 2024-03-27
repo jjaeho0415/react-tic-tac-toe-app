@@ -19,8 +19,11 @@ const Game = () => {
   }
   const moves = history.map((squares, move) => {
     let description = move > 0 ? `Go to move # ${move}` : "Go to game start";
+    let order =
+      move === 0 ? `게임을 시작하세요.` : `당신은 ${move}번째 순서에 있습니다.`;
     return (
       <li key={move}>
+        {order}
         <button onClick={() => jumpTo(move)}>{description}</button>
       </li>
     );
@@ -35,7 +38,7 @@ const Game = () => {
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className='game-info'>
-        <ol>{moves}</ol>
+        <ol className='order-description'>{moves}</ol>
       </div>
     </div>
   );

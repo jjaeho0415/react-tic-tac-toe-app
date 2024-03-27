@@ -85,10 +85,12 @@ body {
 }
 
 .game {
-  display: flex;
+  display: block;
   flex-direction: row;
 }
 
-.game-info {
-  margin-left: 20px;
+.order-description{
+  display: grid;
+  row-gap: 10px;
+  padding-left: 10px;
 }
